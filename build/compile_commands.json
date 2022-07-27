@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/include/module -g -o CMakeFiles/module.dir/src/cleitin/module/ecs.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/module/ecs.c",
+  "file": "/home/garcias/src/cleitin-engine/src/cleitin/module/ecs.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/include/module -g -o CMakeFiles/module.dir/src/cleitin/module/draw.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/module/draw.c",
+  "file": "/home/garcias/src/cleitin-engine/src/cleitin/module/draw.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -Dcleitin_lib_EXPORTS -I/home/garcias/src/cleitin-engine/include/cleitin -I/home/garcias/src/cleitin-engine/include/module -g -fPIC -o CMakeFiles/cleitin_lib.dir/src/cleitin/cleitin.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/cleitin.c",
+  "file": "/home/garcias/src/cleitin-engine/src/cleitin/cleitin.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/cleitin -g -o CMakeFiles/cleitin_engine.dir/src/main.c.o -c /home/garcias/src/cleitin-engine/src/main.c",
+  "file": "/home/garcias/src/cleitin-engine/src/main.c"
+}
+]

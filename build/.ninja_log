@@ -1,0 +1,10 @@
+# ninja log v5
+1	25	1658901481549872952	CMakeFiles/module.dir/src/cleitin/module/draw.c.o	d26dab6525903836
+54	73	1658900865428925038	cleitin_engine	33ce3cb862a11592
+0	75	1656823377600428146	CMakeFiles/module.dir/src/cleitin/module/module.c.o	4bcf6c27a5040587
+1	35	1658900949030953403	CMakeFiles/module.dir/src/cleitin/module/ecs.c.o	8612851f36554f15
+40	61	1658901481585874669	libcleitin_lib.so	f7d6260ac3c4f34c
+25	30	1658901481557873335	libmodule.a	664f0bb58d0043b3
+1	32	1658900949026953305	CMakeFiles/cleitin_engine.dir/src/main.c.o	8a58c4a92d33780a
+1	40	1658901481565873716	CMakeFiles/cleitin_lib.dir/src/cleitin/cleitin.c.o	a65312839b353054
+0	44	1658896868173655259	CMakeFiles/module.dir/src/cleitin/module/component.c.o	6896ca373e92cd60

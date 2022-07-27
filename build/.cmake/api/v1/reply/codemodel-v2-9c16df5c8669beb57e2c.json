@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "cleitin_engine",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "cleitin_engine::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cleitin_engine-Debug-3c75a6236c96f080548e.json",
+					"name" : "cleitin_engine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cleitin_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cleitin_lib-Debug-9bd0ab0868d8d4d8ff18.json",
+					"name" : "cleitin_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module-Debug-2db5db5f48256705f3b7.json",
+					"name" : "module",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/garcias/src/cleitin-engine/build",
+		"source" : "/home/garcias/src/cleitin-engine"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
