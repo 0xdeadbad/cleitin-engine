@@ -1,0 +1,9 @@
+[submodule "cmake/enet"]
+	path = cmake/enet
+	url = https://github.com/zpl-c/enet
+[submodule "cmake/luajit-cmake"]
+	path = cmake/luajit-cmake
+	url = https://github.com/zhaozg/luajit-cmake
+[submodule "external/LuaJIT"]
+	path = external/LuaJIT
+	url = https://github.com/LuaJIT/LuaJIT

@@ -1,22 +1,417 @@
 [
 {
   "directory": "/home/garcias/src/cleitin-engine/build",
-  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/include/module -g -o CMakeFiles/module.dir/src/cleitin/module/ecs.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/module/ecs.c",
+  "command": "/usr/bin/gcc -DENET_DLL -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/include/network -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/cmake/enet/include -g -o CMakeFiles/module.dir/src/cleitin/module/ecs.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/module/ecs.c",
   "file": "/home/garcias/src/cleitin-engine/src/cleitin/module/ecs.c"
 },
 {
   "directory": "/home/garcias/src/cleitin-engine/build",
-  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/include/module -g -o CMakeFiles/module.dir/src/cleitin/module/draw.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/module/draw.c",
+  "command": "/usr/bin/gcc -DENET_DLL -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/include/network -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/cmake/enet/include -g -o CMakeFiles/module.dir/src/cleitin/module/draw.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/module/draw.c",
   "file": "/home/garcias/src/cleitin-engine/src/cleitin/module/draw.c"
 },
 {
   "directory": "/home/garcias/src/cleitin-engine/build",
-  "command": "/usr/bin/gcc -Dcleitin_lib_EXPORTS -I/home/garcias/src/cleitin-engine/include/cleitin -I/home/garcias/src/cleitin-engine/include/module -g -fPIC -o CMakeFiles/cleitin_lib.dir/src/cleitin/cleitin.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/cleitin.c",
+  "command": "/usr/bin/gcc -DENET_DLL -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/include/network -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/cmake/enet/include -g -o CMakeFiles/module.dir/src/cleitin/module/window.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/module/window.c",
+  "file": "/home/garcias/src/cleitin-engine/src/cleitin/module/window.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DENET_DLL -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/include/network -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/cmake/enet/include -g -o CMakeFiles/module.dir/src/cleitin/module/network.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/module/network.c",
+  "file": "/home/garcias/src/cleitin-engine/src/cleitin/module/network.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -Dcleitin_lib_EXPORTS -I/home/garcias/src/cleitin-engine/include/cleitin -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -g -fPIC -o CMakeFiles/cleitin_lib.dir/src/cleitin/cleitin.c.o -c /home/garcias/src/cleitin-engine/src/cleitin/cleitin.c",
   "file": "/home/garcias/src/cleitin-engine/src/cleitin/cleitin.c"
 },
 {
   "directory": "/home/garcias/src/cleitin-engine/build",
-  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/cleitin -g -o CMakeFiles/cleitin_engine.dir/src/main.c.o -c /home/garcias/src/cleitin-engine/src/main.c",
+  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/cleitin -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -g -o CMakeFiles/cleitin_engine.dir/src/main.c.o -c /home/garcias/src/cleitin-engine/src/main.c",
   "file": "/home/garcias/src/cleitin-engine/src/main.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DENET_DLL -Denet_shared_EXPORTS -I/home/garcias/src/cleitin-engine/cmake/enet/include -g -fPIC -Wno-error -o cmake/enet/CMakeFiles/enet_shared.dir/test/library.c.o -c /home/garcias/src/cleitin-engine/cmake/enet/test/library.c",
+  "file": "/home/garcias/src/cleitin-engine/cmake/enet/test/library.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_aux.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_aux.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_aux.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_base.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_base.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_base.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_bit.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_bit.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_bit.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_buffer.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_buffer.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_buffer.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_debug.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_debug.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_debug.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_ffi.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_ffi.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_ffi.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_init.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_init.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_init.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_io.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_io.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_io.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_jit.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_jit.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_jit.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_math.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_math.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_math.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_os.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_os.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_os.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_package.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_package.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_package.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_string.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_string.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_string.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_table.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_table.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_table.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_alloc.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_alloc.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_alloc.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_api.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_api.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_api.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_asm.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_asm.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_asm.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_assert.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_assert.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_assert.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bc.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_bc.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_bc.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bcread.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_bcread.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_bcread.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bcwrite.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_bcwrite.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_bcwrite.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_buf.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_buf.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_buf.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_carith.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_carith.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_carith.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ccall.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ccall.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ccall.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ccallback.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ccallback.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ccallback.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cconv.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_cconv.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_cconv.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cdata.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_cdata.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_cdata.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_char.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_char.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_char.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_clib.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_clib.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_clib.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cparse.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_cparse.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_cparse.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_crecord.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_crecord.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_crecord.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ctype.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ctype.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ctype.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_debug.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_debug.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_debug.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_dispatch.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_dispatch.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_dispatch.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_err.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_err.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_err.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ffrecord.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ffrecord.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ffrecord.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_func.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_func.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_func.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_gc.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_gc.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_gc.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_gdbjit.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_gdbjit.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_gdbjit.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ir.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ir.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ir.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_lex.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_lex.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_lex.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_lib.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_lib.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_lib.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_load.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_load.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_load.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_mcode.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_mcode.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_mcode.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_meta.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_meta.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_meta.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_obj.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_obj.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_obj.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_dce.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_dce.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_dce.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_fold.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_fold.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_fold.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_loop.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_loop.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_loop.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_mem.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_mem.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_mem.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_narrow.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_narrow.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_narrow.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_sink.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_sink.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_sink.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_split.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_split.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_split.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_parse.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_parse.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_parse.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_prng.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_prng.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_prng.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_profile.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_profile.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_profile.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_record.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_record.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_record.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_serialize.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_serialize.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_serialize.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_snap.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_snap.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_snap.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_state.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_state.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_state.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_str.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_str.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_str.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strfmt.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_strfmt.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_strfmt.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strfmt_num.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_strfmt_num.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_strfmt_num.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strscan.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_strscan.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_strscan.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_tab.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_tab.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_tab.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_trace.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_trace.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_trace.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_udata.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_udata.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_udata.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_vmevent.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_vmevent.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_vmevent.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_vmmath.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_vmmath.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_vmmath.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\\\"lib\\\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector -o cmake/luajit-cmake/CMakeFiles/libluajit.dir/lj_vm.S.o -c /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/lj_vm.S",
+  "file": "/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/lj_vm.S"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -o cmake/luajit-cmake/host/minilua/CMakeFiles/minilua.dir/__/__/__/__/external/LuaJIT/src/host/minilua.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/minilua.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/host/minilua.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/external/LuaJIT/src/host -I/home/garcias/src/cleitin-engine/build -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/../../.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -o cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/external/LuaJIT/src/host -I/home/garcias/src/cleitin-engine/build -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/../../.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -o cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_asm.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_asm.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_asm.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/external/LuaJIT/src/host -I/home/garcias/src/cleitin-engine/build -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/../../.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -o cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_fold.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_fold.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_fold.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/external/LuaJIT/src/host -I/home/garcias/src/cleitin-engine/build -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/../../.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -o cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_lib.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_lib.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_lib.c"
+},
+{
+  "directory": "/home/garcias/src/cleitin-engine/build",
+  "command": "/usr/bin/gcc -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/external/LuaJIT/src/host -I/home/garcias/src/cleitin-engine/build -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/../../.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -o cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_peobj.c.o -c /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_peobj.c",
+  "file": "/home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_peobj.c"
 }
 ]

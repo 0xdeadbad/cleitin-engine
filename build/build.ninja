@@ -47,19 +47,37 @@ cmake_ninja_workdir = /home/garcias/src/cleitin-engine/build/
 #############################################
 # Order-only phony target for module
 
-build cmake_object_order_depends_target_module: phony || CMakeFiles/module.dir
+build cmake_object_order_depends_target_module: phony || cmake_object_order_depends_target_enet_shared cmake_object_order_depends_target_libluajit
 
 build CMakeFiles/module.dir/src/cleitin/module/ecs.c.o: C_COMPILER__module_Debug /home/garcias/src/cleitin-engine/src/cleitin/module/ecs.c || cmake_object_order_depends_target_module
+  DEFINES = -DENET_DLL
   DEP_FILE = CMakeFiles/module.dir/src/cleitin/module/ecs.c.o.d
   FLAGS = -g
-  INCLUDES = -I/home/garcias/src/cleitin-engine/include/module
+  INCLUDES = -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/include/network -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/cmake/enet/include
   OBJECT_DIR = CMakeFiles/module.dir
   OBJECT_FILE_DIR = CMakeFiles/module.dir/src/cleitin/module
 
 build CMakeFiles/module.dir/src/cleitin/module/draw.c.o: C_COMPILER__module_Debug /home/garcias/src/cleitin-engine/src/cleitin/module/draw.c || cmake_object_order_depends_target_module
+  DEFINES = -DENET_DLL
   DEP_FILE = CMakeFiles/module.dir/src/cleitin/module/draw.c.o.d
   FLAGS = -g
-  INCLUDES = -I/home/garcias/src/cleitin-engine/include/module
+  INCLUDES = -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/include/network -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/cmake/enet/include
+  OBJECT_DIR = CMakeFiles/module.dir
+  OBJECT_FILE_DIR = CMakeFiles/module.dir/src/cleitin/module
+
+build CMakeFiles/module.dir/src/cleitin/module/window.c.o: C_COMPILER__module_Debug /home/garcias/src/cleitin-engine/src/cleitin/module/window.c || cmake_object_order_depends_target_module
+  DEFINES = -DENET_DLL
+  DEP_FILE = CMakeFiles/module.dir/src/cleitin/module/window.c.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/include/network -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/cmake/enet/include
+  OBJECT_DIR = CMakeFiles/module.dir
+  OBJECT_FILE_DIR = CMakeFiles/module.dir/src/cleitin/module
+
+build CMakeFiles/module.dir/src/cleitin/module/network.c.o: C_COMPILER__module_Debug /home/garcias/src/cleitin-engine/src/cleitin/module/network.c || cmake_object_order_depends_target_module
+  DEFINES = -DENET_DLL
+  DEP_FILE = CMakeFiles/module.dir/src/cleitin/module/network.c.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/include/network -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/cmake/enet/include
   OBJECT_DIR = CMakeFiles/module.dir
   OBJECT_FILE_DIR = CMakeFiles/module.dir/src/cleitin/module
 
@@ -71,7 +89,7 @@ build CMakeFiles/module.dir/src/cleitin/module/draw.c.o: C_COMPILER__module_Debu
 #############################################
 # Link the static library libmodule.a
 
-build libmodule.a: C_STATIC_LIBRARY_LINKER__module_Debug CMakeFiles/module.dir/src/cleitin/module/ecs.c.o CMakeFiles/module.dir/src/cleitin/module/draw.c.o
+build libmodule.a: C_STATIC_LIBRARY_LINKER__module_Debug CMakeFiles/module.dir/src/cleitin/module/ecs.c.o CMakeFiles/module.dir/src/cleitin/module/draw.c.o CMakeFiles/module.dir/src/cleitin/module/window.c.o CMakeFiles/module.dir/src/cleitin/module/network.c.o || cmake/enet/libenet_shared.so cmake/luajit-cmake/libluajit.so cmake/luajit-cmake/libluajit.so cmake/enet/libenet_shared.so
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/module.dir
   POST_BUILD = :
@@ -86,13 +104,13 @@ build libmodule.a: C_STATIC_LIBRARY_LINKER__module_Debug CMakeFiles/module.dir/s
 #############################################
 # Order-only phony target for cleitin_lib
 
-build cmake_object_order_depends_target_cleitin_lib: phony || cmake_object_order_depends_target_module
+build cmake_object_order_depends_target_cleitin_lib: phony || cmake_object_order_depends_target_enet_shared cmake_object_order_depends_target_libluajit cmake_object_order_depends_target_module
 
 build CMakeFiles/cleitin_lib.dir/src/cleitin/cleitin.c.o: C_COMPILER__cleitin_lib_Debug /home/garcias/src/cleitin-engine/src/cleitin/cleitin.c || cmake_object_order_depends_target_cleitin_lib
   DEFINES = -Dcleitin_lib_EXPORTS
   DEP_FILE = CMakeFiles/cleitin_lib.dir/src/cleitin/cleitin.c.o.d
   FLAGS = -g -fPIC
-  INCLUDES = -I/home/garcias/src/cleitin-engine/include/cleitin -I/home/garcias/src/cleitin-engine/include/module
+  INCLUDES = -I/home/garcias/src/cleitin-engine/include/cleitin -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/external/LuaJIT/src
   OBJECT_DIR = CMakeFiles/cleitin_lib.dir
   OBJECT_FILE_DIR = CMakeFiles/cleitin_lib.dir/src/cleitin
 
@@ -104,9 +122,9 @@ build CMakeFiles/cleitin_lib.dir/src/cleitin/cleitin.c.o: C_COMPILER__cleitin_li
 #############################################
 # Link the shared library libcleitin_lib.so
 
-build libcleitin_lib.so: C_SHARED_LIBRARY_LINKER__cleitin_lib_Debug CMakeFiles/cleitin_lib.dir/src/cleitin/cleitin.c.o | libmodule.a || libmodule.a
+build libcleitin_lib.so: C_SHARED_LIBRARY_LINKER__cleitin_lib_Debug CMakeFiles/cleitin_lib.dir/src/cleitin/cleitin.c.o | libmodule.a cmake/luajit-cmake/libluajit.so /usr/lib/x86_64-linux-gnu/libm.so /usr/lib/x86_64-linux-gnu/libdl.so cmake/enet/libenet_shared.so || cmake/enet/libenet_shared.so cmake/luajit-cmake/libluajit.so libmodule.a
   LANGUAGE_COMPILE_FLAGS = -g
-  LINK_LIBRARIES = libmodule.a  -lluajit-5.1  -lpthread  -lflecs  -lraylib  -ldl
+  LINK_LIBRARIES = -Wl,-rpath,/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake:/home/garcias/src/cleitin-engine/build/cmake/enet  libmodule.a  cmake/luajit-cmake/libluajit.so  -lm  /usr/lib/x86_64-linux-gnu/libdl.so  -lpthread  -lflecs  -lraylib  -ldl  cmake/enet/libenet_shared.so
   OBJECT_DIR = CMakeFiles/cleitin_lib.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -127,7 +145,7 @@ build cmake_object_order_depends_target_cleitin_engine: phony || cmake_object_or
 build CMakeFiles/cleitin_engine.dir/src/main.c.o: C_COMPILER__cleitin_engine_Debug /home/garcias/src/cleitin-engine/src/main.c || cmake_object_order_depends_target_cleitin_engine
   DEP_FILE = CMakeFiles/cleitin_engine.dir/src/main.c.o.d
   FLAGS = -g
-  INCLUDES = -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/cleitin
+  INCLUDES = -I/home/garcias/src/cleitin-engine/include/module -I/home/garcias/src/cleitin-engine/include/cleitin -I/home/garcias/src/cleitin-engine/include/util -I/home/garcias/src/cleitin-engine/external/LuaJIT/src
   OBJECT_DIR = CMakeFiles/cleitin_engine.dir
   OBJECT_FILE_DIR = CMakeFiles/cleitin_engine.dir/src
 
@@ -172,10 +190,1298 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build && /usr/local/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build && /usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build && /usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/garcias/src/cleitin-engine/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target enet_shared
+
+
+#############################################
+# Order-only phony target for enet_shared
+
+build cmake_object_order_depends_target_enet_shared: phony || cmake/enet/CMakeFiles/enet_shared.dir
+
+build cmake/enet/CMakeFiles/enet_shared.dir/test/library.c.o: C_COMPILER__enet_shared_Debug /home/garcias/src/cleitin-engine/cmake/enet/test/library.c || cmake_object_order_depends_target_enet_shared
+  DEFINES = -DENET_DLL -Denet_shared_EXPORTS
+  DEP_FILE = cmake/enet/CMakeFiles/enet_shared.dir/test/library.c.o.d
+  FLAGS = -g -fPIC -Wno-error
+  INCLUDES = -I/home/garcias/src/cleitin-engine/cmake/enet/include
+  OBJECT_DIR = cmake/enet/CMakeFiles/enet_shared.dir
+  OBJECT_FILE_DIR = cmake/enet/CMakeFiles/enet_shared.dir/test
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target enet_shared
+
+
+#############################################
+# Link the shared library cmake/enet/libenet_shared.so
+
+build cmake/enet/libenet_shared.so: C_SHARED_LIBRARY_LINKER__enet_shared_Debug cmake/enet/CMakeFiles/enet_shared.dir/test/library.c.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = cmake/enet/CMakeFiles/enet_shared.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libenet_shared.so
+  SONAME_FLAG = -Wl,-soname,
+  TARGET_FILE = cmake/enet/libenet_shared.so
+  TARGET_PDB = enet_shared.so.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build cmake/enet/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/enet && /usr/local/bin/ccmake -S/home/garcias/src/cleitin-engine -B/home/garcias/src/cleitin-engine/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build cmake/enet/edit_cache: phony cmake/enet/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build cmake/enet/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/enet && /usr/local/bin/cmake --regenerate-during-build -S/home/garcias/src/cleitin-engine -B/home/garcias/src/cleitin-engine/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build cmake/enet/rebuild_cache: phony cmake/enet/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build cmake/enet/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build cmake/enet/CMakeFiles/install.util: CUSTOM_COMMAND cmake/enet/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/enet && /usr/local/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build cmake/enet/install: phony cmake/enet/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build cmake/enet/CMakeFiles/install/local.util: CUSTOM_COMMAND cmake/enet/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/enet && /usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build cmake/enet/install/local: phony cmake/enet/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build cmake/enet/CMakeFiles/install/strip.util: CUSTOM_COMMAND cmake/enet/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/enet && /usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build cmake/enet/install/strip: phony cmake/enet/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/garcias/src/cleitin-engine/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for buildvm_arch_h
+
+build cmake/luajit-cmake/buildvm_arch_h: phony cmake/luajit-cmake/CMakeFiles/buildvm_arch_h cmake/luajit-cmake/buildvm_arch.h cmake/luajit-cmake/host/minilua/minilua
+
+
+#############################################
+# Utility command for lj_gen_headers
+
+build cmake/luajit-cmake/lj_gen_headers: phony cmake/luajit-cmake/CMakeFiles/lj_gen_headers cmake/luajit-cmake/lj_libdef.h cmake/luajit-cmake/jit/vmdef.lua cmake/luajit-cmake/lj_recdef.h cmake/luajit-cmake/lj_ffdef.h cmake/luajit-cmake/lj_bcdef.h cmake/luajit-cmake/host/buildvm/buildvm
+
+
+#############################################
+# Utility command for lj_gen_folddef
+
+build cmake/luajit-cmake/lj_gen_folddef: phony cmake/luajit-cmake/CMakeFiles/lj_gen_folddef cmake/luajit-cmake/lj_folddef.h cmake/luajit-cmake/host/buildvm/buildvm
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target libluajit
+
+
+#############################################
+# Order-only phony target for libluajit
+
+build cmake_object_order_depends_target_libluajit: phony || cmake/luajit-cmake/buildvm_arch_h cmake/luajit-cmake/host/buildvm/buildvm cmake/luajit-cmake/lj_gen_folddef cmake/luajit-cmake/lj_gen_headers cmake/luajit-cmake/lj_vm.S
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_aux.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_aux.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_aux.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_base.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_base.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_base.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_bit.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_bit.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_bit.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_buffer.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_buffer.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_buffer.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_debug.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_debug.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_debug.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_ffi.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_ffi.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_ffi.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_init.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_init.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_init.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_io.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_io.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_io.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_jit.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_jit.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_jit.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_math.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_math.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_math.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_os.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_os.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_os.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_package.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_package.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_package.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_string.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_string.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_string.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_table.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_table.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_table.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_alloc.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_alloc.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_alloc.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_api.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_api.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_api.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_asm.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_asm.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_asm.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_assert.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_assert.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_assert.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bc.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_bc.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bc.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bcread.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_bcread.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bcread.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bcwrite.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_bcwrite.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bcwrite.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_buf.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_buf.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_buf.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_carith.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_carith.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_carith.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ccall.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ccall.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ccall.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ccallback.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ccallback.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ccallback.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cconv.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_cconv.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cconv.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cdata.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_cdata.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cdata.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_char.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_char.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_char.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_clib.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_clib.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_clib.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cparse.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_cparse.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cparse.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_crecord.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_crecord.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_crecord.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ctype.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ctype.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ctype.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_debug.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_debug.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_debug.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_dispatch.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_dispatch.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_dispatch.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_err.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_err.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_err.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ffrecord.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ffrecord.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ffrecord.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_func.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_func.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_func.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_gc.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_gc.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_gc.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_gdbjit.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_gdbjit.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_gdbjit.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ir.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_ir.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ir.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_lex.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_lex.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_lex.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_lib.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_lib.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_lib.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_load.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_load.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_load.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_mcode.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_mcode.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_mcode.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_meta.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_meta.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_meta.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_obj.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_obj.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_obj.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_dce.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_dce.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_dce.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_fold.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_fold.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_fold.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_loop.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_loop.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_loop.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_mem.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_mem.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_mem.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_narrow.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_narrow.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_narrow.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_sink.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_sink.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_sink.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_split.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_split.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_split.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_parse.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_parse.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_parse.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_prng.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_prng.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_prng.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_profile.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_profile.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_profile.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_record.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_record.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_record.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_serialize.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_serialize.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_serialize.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_snap.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_snap.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_snap.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_state.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_state.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_state.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_str.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_str.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_str.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strfmt.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_strfmt.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strfmt.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strfmt_num.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_strfmt_num.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strfmt_num.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strscan.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_strscan.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strscan.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_tab.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_tab.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_tab.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_trace.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_trace.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_trace.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_udata.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_udata.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_udata.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_vmevent.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_vmevent.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_vmevent.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_vmmath.c.o: C_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_vmmath.c || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_vmmath.c.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+build cmake/luajit-cmake/CMakeFiles/libluajit.dir/lj_vm.S.o: ASM_COMPILER__libluajit_Debug /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/lj_vm.S || cmake_object_order_depends_target_libluajit
+  DEFINES = -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX -DLUA_MULTILIB=\"lib\" -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Dlibluajit_EXPORTS
+  DEP_FILE = cmake/luajit-cmake/CMakeFiles/libluajit.dir/lj_vm.S.o.d
+  FLAGS = -g -fPIC -U_FORTIFY_SOURCE -fno-stack-protector
+  INCLUDES = -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake -I/home/garcias/src/cleitin-engine/cmake/luajit-cmake
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target libluajit
+
+
+#############################################
+# Link the shared library cmake/luajit-cmake/libluajit.so
+
+build cmake/luajit-cmake/libluajit.so: C_SHARED_LIBRARY_LINKER__libluajit_Debug cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_aux.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_base.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_bit.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_buffer.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_debug.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_ffi.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_init.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_io.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_jit.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_math.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_os.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_package.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_string.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lib_table.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_alloc.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_api.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_asm.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_assert.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bc.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bcread.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_bcwrite.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_buf.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_carith.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ccall.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ccallback.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cconv.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cdata.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_char.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_clib.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_cparse.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_crecord.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ctype.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_debug.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_dispatch.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_err.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ffrecord.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_func.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_gc.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_gdbjit.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_ir.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_lex.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_lib.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_load.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_mcode.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_meta.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_obj.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_dce.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_fold.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_loop.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_mem.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_narrow.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_sink.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_opt_split.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_parse.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_prng.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_profile.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_record.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_serialize.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_snap.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_state.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_str.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strfmt.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strfmt_num.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_strscan.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_tab.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_trace.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_udata.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_vmevent.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/__/__/external/LuaJIT/src/lj_vmmath.c.o cmake/luajit-cmake/CMakeFiles/libluajit.dir/lj_vm.S.o | /usr/lib/x86_64-linux-gnu/libm.so /usr/lib/x86_64-linux-gnu/libdl.so || cmake/luajit-cmake/buildvm_arch_h cmake/luajit-cmake/host/buildvm/buildvm cmake/luajit-cmake/lj_gen_folddef cmake/luajit-cmake/lj_gen_headers
+  LANGUAGE_COMPILE_FLAGS = -g
+  LINK_LIBRARIES = -lm  -ldl
+  OBJECT_DIR = cmake/luajit-cmake/CMakeFiles/libluajit.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libluajit.so
+  SONAME_FLAG = -Wl,-soname,
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/CMakeFiles/libluajit.dir/
+  TARGET_FILE = cmake/luajit-cmake/libluajit.so
+  TARGET_PDB = cmake/luajit-cmake/libluajit.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build cmake/luajit-cmake/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake && /usr/local/bin/ccmake -S/home/garcias/src/cleitin-engine -B/home/garcias/src/cleitin-engine/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/edit_cache: phony cmake/luajit-cmake/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build cmake/luajit-cmake/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake && /usr/local/bin/cmake --regenerate-during-build -S/home/garcias/src/cleitin-engine -B/home/garcias/src/cleitin-engine/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/rebuild_cache: phony cmake/luajit-cmake/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build cmake/luajit-cmake/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build cmake/luajit-cmake/CMakeFiles/install.util: CUSTOM_COMMAND cmake/luajit-cmake/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake && /usr/local/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/install: phony cmake/luajit-cmake/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build cmake/luajit-cmake/CMakeFiles/install/local.util: CUSTOM_COMMAND cmake/luajit-cmake/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake && /usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/install/local: phony cmake/luajit-cmake/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build cmake/luajit-cmake/CMakeFiles/install/strip.util: CUSTOM_COMMAND cmake/luajit-cmake/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake && /usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/install/strip: phony cmake/luajit-cmake/CMakeFiles/install/strip.util
+
+
+#############################################
+# Phony custom command for cmake/luajit-cmake/CMakeFiles/buildvm_arch_h
+
+build cmake/luajit-cmake/CMakeFiles/buildvm_arch_h | ${cmake_ninja_workdir}cmake/luajit-cmake/CMakeFiles/buildvm_arch_h: phony cmake/luajit-cmake/buildvm_arch.h || cmake/luajit-cmake/host/minilua/minilua
+
+
+#############################################
+# Custom command for cmake/luajit-cmake/buildvm_arch.h
+
+build cmake/luajit-cmake/buildvm_arch.h | ${cmake_ninja_workdir}cmake/luajit-cmake/buildvm_arch.h: CUSTOM_COMMAND cmake/luajit-cmake/host/minilua/minilua || cmake/luajit-cmake/host/minilua/minilua
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake && /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/minilua/minilua /home/garcias/src/cleitin-engine/external/LuaJIT/dynasm/dynasm.lua -D FPU -D HFABI -D NO_UNWIND -D ENDIAN_LE -D P64 -D FFI -D JIT -D VER= -o /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/buildvm_arch.h /home/garcias/src/cleitin-engine/external/LuaJIT/src/vm_x64.dasc
+  DESC = Generating buildvm_arch.h
+  restat = 1
+
+
+#############################################
+# Phony custom command for cmake/luajit-cmake/CMakeFiles/lj_gen_headers
+
+build cmake/luajit-cmake/CMakeFiles/lj_gen_headers | ${cmake_ninja_workdir}cmake/luajit-cmake/CMakeFiles/lj_gen_headers: phony cmake/luajit-cmake/lj_libdef.h cmake/luajit-cmake/lj_recdef.h cmake/luajit-cmake/jit/vmdef.lua cmake/luajit-cmake/lj_ffdef.h cmake/luajit-cmake/lj_bcdef.h || cmake/luajit-cmake/buildvm_arch_h cmake/luajit-cmake/host/buildvm/buildvm cmake/luajit-cmake/host/minilua/minilua
+
+
+#############################################
+# Custom command for cmake/luajit-cmake/lj_libdef.h
+
+build cmake/luajit-cmake/lj_libdef.h cmake/luajit-cmake/jit/vmdef.lua cmake/luajit-cmake/lj_recdef.h cmake/luajit-cmake/lj_ffdef.h cmake/luajit-cmake/lj_bcdef.h | ${cmake_ninja_workdir}cmake/luajit-cmake/lj_libdef.h ${cmake_ninja_workdir}cmake/luajit-cmake/jit/vmdef.lua ${cmake_ninja_workdir}cmake/luajit-cmake/lj_recdef.h ${cmake_ninja_workdir}cmake/luajit-cmake/lj_ffdef.h ${cmake_ninja_workdir}cmake/luajit-cmake/lj_bcdef.h: CUSTOM_COMMAND cmake/luajit-cmake/host/buildvm/buildvm || cmake/luajit-cmake/buildvm_arch_h cmake/luajit-cmake/host/buildvm/buildvm cmake/luajit-cmake/host/minilua/minilua
+  COMMAND = cd /home/garcias/src/cleitin-engine/cmake/luajit-cmake && /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/buildvm -m libdef -o /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/lj_libdef.h /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_base.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_math.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_bit.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_string.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_table.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_io.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_os.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_package.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_debug.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_jit.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_ffi.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_buffer.c && /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/buildvm -m recdef -o /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/lj_recdef.h /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_base.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_math.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_bit.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_string.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_table.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_io.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_os.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_package.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_debug.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_jit.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_ffi.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_buffer.c && /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/buildvm -m ffdef -o /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/lj_ffdef.h /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_base.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_math.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_bit.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_string.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_table.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_io.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_os.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_package.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_debug.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_jit.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_ffi.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_buffer.c && /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/buildvm -m bcdef -o /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/lj_bcdef.h /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_base.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_math.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_bit.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_string.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_table.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_io.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_os.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_package.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_debug.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_jit.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_ffi.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_buffer.c && /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/buildvm -m vmdef -o /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/jit/vmdef.lua /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_base.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_math.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_bit.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_string.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_table.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_io.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_os.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_package.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_debug.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_jit.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_ffi.c /home/garcias/src/cleitin-engine/external/LuaJIT/src/lib_buffer.c
+  DESC = Generating lj_libdef.h, jit/vmdef.lua, lj_recdef.h, lj_ffdef.h, lj_bcdef.h
+  restat = 1
+
+
+#############################################
+# Phony custom command for cmake/luajit-cmake/CMakeFiles/lj_gen_folddef
+
+build cmake/luajit-cmake/CMakeFiles/lj_gen_folddef | ${cmake_ninja_workdir}cmake/luajit-cmake/CMakeFiles/lj_gen_folddef: phony cmake/luajit-cmake/lj_folddef.h || cmake/luajit-cmake/buildvm_arch_h cmake/luajit-cmake/host/buildvm/buildvm cmake/luajit-cmake/host/minilua/minilua
+
+
+#############################################
+# Custom command for cmake/luajit-cmake/lj_folddef.h
+
+build cmake/luajit-cmake/lj_folddef.h | ${cmake_ninja_workdir}cmake/luajit-cmake/lj_folddef.h: CUSTOM_COMMAND cmake/luajit-cmake/host/buildvm/buildvm || cmake/luajit-cmake/buildvm_arch_h cmake/luajit-cmake/host/buildvm/buildvm cmake/luajit-cmake/host/minilua/minilua
+  COMMAND = cd /home/garcias/src/cleitin-engine/cmake/luajit-cmake && /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/buildvm -m folddef -o /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/lj_folddef.h /home/garcias/src/cleitin-engine/external/LuaJIT/src/lj_opt_fold.c
+  DESC = Generating lj_folddef.h
+  restat = 1
+
+
+#############################################
+# Custom command for cmake/luajit-cmake/lj_vm.S
+
+build cmake/luajit-cmake/lj_vm.S | ${cmake_ninja_workdir}cmake/luajit-cmake/lj_vm.S: CUSTOM_COMMAND cmake/luajit-cmake/host/buildvm/buildvm || cmake/luajit-cmake/buildvm_arch_h cmake/luajit-cmake/host/buildvm/buildvm cmake/luajit-cmake/host/minilua/minilua cmake/luajit-cmake/lj_gen_folddef cmake/luajit-cmake/lj_gen_headers
+  COMMAND = cd /home/garcias/src/cleitin-engine/cmake/luajit-cmake && /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/buildvm -m elfasm -o /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/lj_vm.S
+  DESC = Generating lj_vm.S
+  restat = 1
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/garcias/src/cleitin-engine/cmake/luajit-cmake/LuaJIT.cmake
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target minilua
+
+
+#############################################
+# Order-only phony target for minilua
+
+build cmake_object_order_depends_target_minilua: phony || cmake/luajit-cmake/host/minilua/CMakeFiles/minilua.dir
+
+build cmake/luajit-cmake/host/minilua/CMakeFiles/minilua.dir/__/__/__/__/external/LuaJIT/src/host/minilua.c.o: C_COMPILER__minilua_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/minilua.c || cmake_object_order_depends_target_minilua
+  DEP_FILE = cmake/luajit-cmake/host/minilua/CMakeFiles/minilua.dir/__/__/__/__/external/LuaJIT/src/host/minilua.c.o.d
+  FLAGS = -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX
+  OBJECT_DIR = cmake/luajit-cmake/host/minilua/CMakeFiles/minilua.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/host/minilua/CMakeFiles/minilua.dir/__/__/__/__/external/LuaJIT/src/host
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/host/minilua/CMakeFiles/minilua.dir/
+  TARGET_PDB = cmake/luajit-cmake/host/minilua/minilua.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target minilua
+
+
+#############################################
+# Link the executable cmake/luajit-cmake/host/minilua/minilua
+
+build cmake/luajit-cmake/host/minilua/minilua: C_EXECUTABLE_LINKER__minilua_Debug cmake/luajit-cmake/host/minilua/CMakeFiles/minilua.dir/__/__/__/__/external/LuaJIT/src/host/minilua.c.o | /usr/lib/x86_64-linux-gnu/libm.so
+  FLAGS = -g
+  LINK_FLAGS = -rdynamic
+  LINK_LIBRARIES = -lm
+  OBJECT_DIR = cmake/luajit-cmake/host/minilua/CMakeFiles/minilua.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/host/minilua/CMakeFiles/minilua.dir/
+  TARGET_FILE = cmake/luajit-cmake/host/minilua/minilua
+  TARGET_PDB = cmake/luajit-cmake/host/minilua/minilua.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build cmake/luajit-cmake/host/minilua/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/minilua && /usr/local/bin/ccmake -S/home/garcias/src/cleitin-engine -B/home/garcias/src/cleitin-engine/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/host/minilua/edit_cache: phony cmake/luajit-cmake/host/minilua/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build cmake/luajit-cmake/host/minilua/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/minilua && /usr/local/bin/cmake --regenerate-during-build -S/home/garcias/src/cleitin-engine -B/home/garcias/src/cleitin-engine/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/host/minilua/rebuild_cache: phony cmake/luajit-cmake/host/minilua/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build cmake/luajit-cmake/host/minilua/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build cmake/luajit-cmake/host/minilua/CMakeFiles/install.util: CUSTOM_COMMAND cmake/luajit-cmake/host/minilua/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/minilua && /usr/local/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/host/minilua/install: phony cmake/luajit-cmake/host/minilua/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build cmake/luajit-cmake/host/minilua/CMakeFiles/install/local.util: CUSTOM_COMMAND cmake/luajit-cmake/host/minilua/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/minilua && /usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/host/minilua/install/local: phony cmake/luajit-cmake/host/minilua/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build cmake/luajit-cmake/host/minilua/CMakeFiles/install/strip.util: CUSTOM_COMMAND cmake/luajit-cmake/host/minilua/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/minilua && /usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/host/minilua/install/strip: phony cmake/luajit-cmake/host/minilua/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/garcias/src/cleitin-engine/cmake/luajit-cmake/LuaJIT.cmake
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target buildvm
+
+
+#############################################
+# Order-only phony target for buildvm
+
+build cmake_object_order_depends_target_buildvm: phony || cmake/luajit-cmake/buildvm_arch_h
+
+build cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm.c.o: C_COMPILER__buildvm_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm.c || cmake_object_order_depends_target_buildvm
+  DEP_FILE = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm.c.o.d
+  FLAGS = -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX
+  INCLUDES = -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/external/LuaJIT/src/host -I/home/garcias/src/cleitin-engine/build -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/../../.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm
+  OBJECT_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/
+  TARGET_PDB = cmake/luajit-cmake/host/buildvm/buildvm.pdb
+
+build cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_asm.c.o: C_COMPILER__buildvm_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_asm.c || cmake_object_order_depends_target_buildvm
+  DEP_FILE = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_asm.c.o.d
+  FLAGS = -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX
+  INCLUDES = -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/external/LuaJIT/src/host -I/home/garcias/src/cleitin-engine/build -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/../../.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm
+  OBJECT_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/
+  TARGET_PDB = cmake/luajit-cmake/host/buildvm/buildvm.pdb
+
+build cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_fold.c.o: C_COMPILER__buildvm_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_fold.c || cmake_object_order_depends_target_buildvm
+  DEP_FILE = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_fold.c.o.d
+  FLAGS = -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX
+  INCLUDES = -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/external/LuaJIT/src/host -I/home/garcias/src/cleitin-engine/build -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/../../.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm
+  OBJECT_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/
+  TARGET_PDB = cmake/luajit-cmake/host/buildvm/buildvm.pdb
+
+build cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_lib.c.o: C_COMPILER__buildvm_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_lib.c || cmake_object_order_depends_target_buildvm
+  DEP_FILE = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_lib.c.o.d
+  FLAGS = -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX
+  INCLUDES = -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/external/LuaJIT/src/host -I/home/garcias/src/cleitin-engine/build -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/../../.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm
+  OBJECT_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/
+  TARGET_PDB = cmake/luajit-cmake/host/buildvm/buildvm.pdb
+
+build cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_peobj.c.o: C_COMPILER__buildvm_Debug /home/garcias/src/cleitin-engine/external/LuaJIT/src/host/buildvm_peobj.c || cmake_object_order_depends_target_buildvm
+  DEP_FILE = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_peobj.c.o.d
+  FLAGS = -g -DLJ_ARCH_HASFPU=1 -DLJ_ABI_SOFTFP=0 -DLUAJIT_TARGET=LUAJIT_ARCH_x64 -DLUAJIT_NO_UNWIND -DLUAJIT_OS=LUAJIT_OS_LINUX
+  INCLUDES = -I/home/garcias/src/cleitin-engine/external/LuaJIT/src -I/home/garcias/src/cleitin-engine/external/LuaJIT/src/host -I/home/garcias/src/cleitin-engine/build -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm/../../.. -I/home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm
+  OBJECT_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir
+  OBJECT_FILE_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/
+  TARGET_PDB = cmake/luajit-cmake/host/buildvm/buildvm.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target buildvm
+
+
+#############################################
+# Link the executable cmake/luajit-cmake/host/buildvm/buildvm
+
+build cmake/luajit-cmake/host/buildvm/buildvm: C_EXECUTABLE_LINKER__buildvm_Debug cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm.c.o cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_asm.c.o cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_fold.c.o cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_lib.c.o cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/__/__/__/__/external/LuaJIT/src/host/buildvm_peobj.c.o || cmake/luajit-cmake/buildvm_arch_h
+  FLAGS = -g
+  LINK_FLAGS = -rdynamic
+  OBJECT_DIR = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = cmake/luajit-cmake/host/buildvm/CMakeFiles/buildvm.dir/
+  TARGET_FILE = cmake/luajit-cmake/host/buildvm/buildvm
+  TARGET_PDB = cmake/luajit-cmake/host/buildvm/buildvm.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build cmake/luajit-cmake/host/buildvm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm && /usr/local/bin/ccmake -S/home/garcias/src/cleitin-engine -B/home/garcias/src/cleitin-engine/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/host/buildvm/edit_cache: phony cmake/luajit-cmake/host/buildvm/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build cmake/luajit-cmake/host/buildvm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm && /usr/local/bin/cmake --regenerate-during-build -S/home/garcias/src/cleitin-engine -B/home/garcias/src/cleitin-engine/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/host/buildvm/rebuild_cache: phony cmake/luajit-cmake/host/buildvm/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build cmake/luajit-cmake/host/buildvm/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build cmake/luajit-cmake/host/buildvm/CMakeFiles/install.util: CUSTOM_COMMAND cmake/luajit-cmake/host/buildvm/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm && /usr/local/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/host/buildvm/install: phony cmake/luajit-cmake/host/buildvm/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build cmake/luajit-cmake/host/buildvm/CMakeFiles/install/local.util: CUSTOM_COMMAND cmake/luajit-cmake/host/buildvm/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm && /usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/host/buildvm/install/local: phony cmake/luajit-cmake/host/buildvm/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build cmake/luajit-cmake/host/buildvm/CMakeFiles/install/strip.util: CUSTOM_COMMAND cmake/luajit-cmake/host/buildvm/all
+  COMMAND = cd /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm && /usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build cmake/luajit-cmake/host/buildvm/install/strip: phony cmake/luajit-cmake/host/buildvm/CMakeFiles/install/strip.util
+
 # =============================================================================
 # Target aliases.
 
+build buildvm: phony cmake/luajit-cmake/host/buildvm/buildvm
+
+build buildvm_arch_h: phony cmake/luajit-cmake/buildvm_arch_h
+
 build cleitin_lib: phony libcleitin_lib.so
+
+build enet_shared: phony cmake/enet/libenet_shared.so
+
+build libenet_shared.so: phony cmake/enet/libenet_shared.so
+
+build libluajit: phony cmake/luajit-cmake/libluajit.so
+
+build libluajit.so: phony cmake/luajit-cmake/libluajit.so
+
+build lj_gen_folddef: phony cmake/luajit-cmake/lj_gen_folddef
+
+build lj_gen_headers: phony cmake/luajit-cmake/lj_gen_headers
+
+build minilua: phony cmake/luajit-cmake/host/minilua/minilua
 
 build module: phony libmodule.a
 
@@ -187,7 +1493,35 @@ build module: phony libmodule.a
 #############################################
 # Folder: /home/garcias/src/cleitin-engine/build
 
-build all: phony libmodule.a libcleitin_lib.so cleitin_engine
+build all: phony libmodule.a libcleitin_lib.so cleitin_engine cmake/enet/all cmake/luajit-cmake/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/garcias/src/cleitin-engine/build/cmake/enet
+
+build cmake/enet/all: phony cmake/enet/libenet_shared.so
+
+# =============================================================================
+
+#############################################
+# Folder: /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake
+
+build cmake/luajit-cmake/all: phony cmake/luajit-cmake/buildvm_arch_h cmake/luajit-cmake/lj_gen_headers cmake/luajit-cmake/lj_gen_folddef cmake/luajit-cmake/libluajit.so cmake/luajit-cmake/host/minilua/all cmake/luajit-cmake/host/buildvm/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/buildvm
+
+build cmake/luajit-cmake/host/buildvm/all: phony cmake/luajit-cmake/host/buildvm/buildvm
+
+# =============================================================================
+
+#############################################
+# Folder: /home/garcias/src/cleitin-engine/build/cmake/luajit-cmake/host/minilua
+
+build cmake/luajit-cmake/host/minilua/all: phony cmake/luajit-cmake/host/minilua/minilua
 
 # =============================================================================
 # Built-in targets
@@ -196,14 +1530,14 @@ build all: phony libmodule.a libcleitin_lib.so cleitin_engine
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/local/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.1/CMakeCCompiler.cmake CMakeFiles/3.23.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../cmake/enet/CMakeLists.txt ../cmake/luajit-cmake/CMakeLists.txt ../cmake/luajit-cmake/LuaJIT.cmake ../cmake/luajit-cmake/Modules/DetectArchitecture.c ../cmake/luajit-cmake/Modules/DetectArchitecture.cmake ../cmake/luajit-cmake/Modules/DetectFPUApi.cmake ../cmake/luajit-cmake/Modules/DetectFpuAbi.c ../cmake/luajit-cmake/Modules/FindUnwind.cmake ../cmake/luajit-cmake/host/buildvm/CMakeLists.txt ../cmake/luajit-cmake/host/minilua/CMakeLists.txt /usr/local/share/cmake-3.23/Modules/CMakeASMCompiler.cmake.in /usr/local/share/cmake-3.23/Modules/CMakeASMInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /usr/local/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /usr/local/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/local/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineASMCompiler.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /usr/local/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /usr/local/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/local/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /usr/local/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.23/Modules/CMakeTestASMCompiler.cmake /usr/local/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /usr/local/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /usr/local/share/cmake-3.23/Modules/CheckCXXCompilerFlag.cmake /usr/local/share/cmake-3.23/Modules/CheckCXXSourceCompiles.cmake /usr/local/share/cmake-3.23/Modules/CheckIncludeFile.c.in /usr/local/share/cmake-3.23/Modules/CheckIncludeFile.cmake /usr/local/share/cmake-3.23/Modules/CheckIncludeFileCXX.cmake /usr/local/share/cmake-3.23/Modules/CheckTypeSize.cmake /usr/local/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-ASM.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/local/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/GNUInstallDirs.cmake /usr/local/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake /usr/local/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake /usr/local/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /usr/local/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-Determine-CXX.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/local/share/cmake-3.23/Modules/TestBigEndian.cmake CMakeCache.txt CMakeFiles/3.23.1/CMakeASMCompiler.cmake CMakeFiles/3.23.1/CMakeCCompiler.cmake CMakeFiles/3.23.1/CMakeCXXCompiler.cmake CMakeFiles/3.23.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /usr/local/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.1/CMakeCCompiler.cmake CMakeFiles/3.23.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../cmake/enet/CMakeLists.txt ../cmake/luajit-cmake/CMakeLists.txt ../cmake/luajit-cmake/LuaJIT.cmake ../cmake/luajit-cmake/Modules/DetectArchitecture.c ../cmake/luajit-cmake/Modules/DetectArchitecture.cmake ../cmake/luajit-cmake/Modules/DetectFPUApi.cmake ../cmake/luajit-cmake/Modules/DetectFpuAbi.c ../cmake/luajit-cmake/Modules/FindUnwind.cmake ../cmake/luajit-cmake/host/buildvm/CMakeLists.txt ../cmake/luajit-cmake/host/minilua/CMakeLists.txt /usr/local/share/cmake-3.23/Modules/CMakeASMCompiler.cmake.in /usr/local/share/cmake-3.23/Modules/CMakeASMInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /usr/local/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /usr/local/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/local/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineASMCompiler.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /usr/local/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /usr/local/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /usr/local/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/local/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /usr/local/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.23/Modules/CMakeTestASMCompiler.cmake /usr/local/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /usr/local/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /usr/local/share/cmake-3.23/Modules/CheckCXXCompilerFlag.cmake /usr/local/share/cmake-3.23/Modules/CheckCXXSourceCompiles.cmake /usr/local/share/cmake-3.23/Modules/CheckIncludeFile.c.in /usr/local/share/cmake-3.23/Modules/CheckIncludeFile.cmake /usr/local/share/cmake-3.23/Modules/CheckIncludeFileCXX.cmake /usr/local/share/cmake-3.23/Modules/CheckTypeSize.cmake /usr/local/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-ASM.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/local/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/local/share/cmake-3.23/Modules/GNUInstallDirs.cmake /usr/local/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake /usr/local/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake /usr/local/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /usr/local/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-Determine-CXX.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/local/share/cmake-3.23/Modules/TestBigEndian.cmake CMakeCache.txt CMakeFiles/3.23.1/CMakeASMCompiler.cmake CMakeFiles/3.23.1/CMakeCCompiler.cmake CMakeFiles/3.23.1/CMakeCXXCompiler.cmake CMakeFiles/3.23.1/CMakeSystem.cmake: phony
 
 
 #############################################

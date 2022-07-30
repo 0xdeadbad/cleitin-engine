@@ -8,8 +8,6 @@ cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
-<<<<<<< HEAD
 _deps
-=======
-_deps
->>>>>>> 5606f6752a61f6bca4678df8b2c96ba5e227bf21
+build/
+.vscode/

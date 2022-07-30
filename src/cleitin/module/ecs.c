@@ -5,7 +5,7 @@
 static int32_t
 ecs_lua_component_register(lua_State *L)
 {
-    
+    return 0;
 }
 
 static const luaL_Reg ecs_lua_entity_funcs[] = 

@@ -13,6 +13,14 @@ ecs_module_register(lua_State *L);
 int32_t
 draw_module_register(lua_State *L);
 int32_t
+window_module_register(lua_State *L);
+int32_t
+network_module_register(lua_State *L);
+
+int32_t
 draw_module_draw(lua_State *L);
+
+bool
+window_module_should_close();
 
 #endif
